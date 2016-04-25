@@ -79,7 +79,7 @@ elseif nargin==0
     cf = [1 30]; 
 end
 
-% Flags for additional processing: [0=no, 1=yes(default)]
+% Flags for additional processing: [0=no, 1=yes]
 removeEyeblinks = 1;    % remove eye blink artifacts using SSP
 baselineCorrect = 0;    % baseline correction of prestimulus average
 
