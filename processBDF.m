@@ -51,7 +51,7 @@ function ERP = processBDF(bdfFilename,trg,tEpo,cf)
 %          postStimTime : post-stimulus time range for epoch
 %                    fs : data sampling frequency (Hz)
 %           eyeblinkRej : used SSP eyeblink rejection [0=no, 1=yes]
-%  eyeblinkRejThreshold : threshold level for eyeblink detection (µV)
+%  eyeblinkRejThreshold : threshold level for eyeblink detection (ÂµV)
 %    baselineCorrection : [0=no, 1=yes]
 %             filterObj : bandpass filter object
 %         filterCutOffs : [lo hi] filter passband cutoff frequencies (Hz)
@@ -81,7 +81,7 @@ end
 
 % Flags for additional processing: [0=no, 1=yes(default)]
 removeEyeblinks = 1;    % remove eye blink artifacts using SSP
-baselineCorrect = 1;    % baseline correction of prestimulus average
+baselineCorrect = 0;    % baseline correction of prestimulus average
 
 % Filter parameters
 cf1 = cf(1);    % BPF cutoff frequency in Hz
@@ -222,7 +222,7 @@ ERP.preStimTime = tPre; % pre-stimulus time range for epoch
 ERP.postStimTime = tPost; % post-stimulus time range for epoch
 ERP.fs = fs; % data sampling frequency (Hz)
 ERP.eyeblinkRej = removeEyeblinks; % [0=no, 1=yes]
-ERP.eyeblinkRejThreshold = EOGthresh; % threshold level for eyeblink detection (µV)
+ERP.eyeblinkRejThreshold = EOGthresh; % threshold level for eyeblink detection (ÂµV)
 ERP.baselineCorrection = baselineCorrect; % [0=no, 1=yes]
 ERP.filterObj = Hd; % filter object
 ERP.filterCutOffs = [cf1,cf2]; % filter passband cutoff frequencies (Hz)
