@@ -1,15 +1,14 @@
-function [diodes,tagIt] = cleanupDiodes(diodes,thresh)
+function [diodes,tagIt] = cleanupDiodes(diodes)
 %
-% [diodes,tagIt] = cleanupDiodes(diodes,thresh)
+% [diodes,tagIt] = cleanupDiodes(diodes)
 % This function addresses the possibility of the light-sensing diodes
 % stuttering causing multiple onset events.  It assumes that if a
 % stuttering event occurs it is within a small time window defined by the
-% variable 'thresh', which is the window span in samples
+% variable 'thresh'
 %
 % INPUT VARIABLE
 %   diodes : 2- or 3-dimension vector of on-off diode information
 %            [samples x diode# x epochs]
-%   thresh : number of samples to look for stuttering diode information
 %
 % OUTPUT VARIABLES
 %   diodes : cleaned up diode information vector
@@ -17,14 +16,11 @@ function [diodes,tagIt] = cleanupDiodes(diodes,thresh)
 %
 % Created 2016-08-04 Scott Bressler
 
-if nargin<2
-    thresh = 1000;
-end
-
 nEpochs = size(diodes,3);
 nTriggers = size(diodes,2);
 nSamples = size(diodes,1);
 
+thresh = 1000;
 
 for k = 1:nEpochs
     for m = 1:nTriggers
