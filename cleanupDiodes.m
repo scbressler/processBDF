@@ -18,13 +18,12 @@ function [diodes,tagIt] = cleanupDiodes(diodes,thresh)
 % Created 2016-08-04 Scott Bressler
 
 if nargin<2
-    thresh = 1000;
+    thresh = 1000; % default number of samples for stutter detection
 end
 
-nEpochs = size(diodes,3);
-nTriggers = size(diodes,2);
-nSamples = size(diodes,1);
-
+nEpochs = size(diodes,3); % number of epochs
+nTriggers = size(diodes,2); % number of diode channels
+nSamples = size(diodes,1); % number of samples
 
 for k = 1:nEpochs
     for m = 1:nTriggers
