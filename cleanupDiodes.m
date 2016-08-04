@@ -1,4 +1,4 @@
-function [diodes,tagIt] = cleanupDiodes(diodes)
+function [diodes,tagIt] = cleanupDiodes(diodes,thresh)
 %
 % [diodes,tagIt] = cleanupDiodes(diodes)
 % This function addresses the possibility of the light-sensing diodes
@@ -14,11 +14,14 @@ function [diodes,tagIt] = cleanupDiodes(diodes)
 %
 % Created 2016-08-04 Scott Bressler
 
+if nargin<2
+    thresh = 1000; % default number of samples for stutter detection
+end
+
 nEpochs = size(diodes,3); % number of epochs
 nTriggers = size(diodes,2); % number of diode channels
 nSamples = size(diodes,1); % number of samples
 
-thresh = 1000;
 
 for k = 1:nEpochs
     for m = 1:nTriggers
