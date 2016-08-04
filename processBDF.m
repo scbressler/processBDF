@@ -121,6 +121,7 @@ rawBDF = d.Record([channels,mastRef,EOGch],:)';
 % Get and organize event triggers
 triggers = mod(d.Event.triggers,256);
 diodes = d.Event.buttons(:,[4 3 2 1]);
+% diodes = cleanupDiodes(diodes);
 diodes = cleanupDiodes(max(0,cat(1,zeros(1,4),diff(diodes))));
 
 OnOff = [0;diff(triggers)];
