@@ -14,9 +14,9 @@ function [diodes,tagIt] = cleanupDiodes(diodes)
 %
 % Created 2016-08-04 Scott Bressler
 
-nEpochs = size(diodes,3);
-nTriggers = size(diodes,2);
-nSamples = size(diodes,1);
+nEpochs = size(diodes,3); % number of epochs
+nTriggers = size(diodes,2); % number of diode channels
+nSamples = size(diodes,1); % number of samples
 
 thresh = 1000;
 
