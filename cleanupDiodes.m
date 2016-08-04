@@ -1,4 +1,18 @@
 function [diodes,tagIt] = cleanupDiodes(diodes)
+%
+% [diodes,tagIt] = cleanupDiodes(diodes)
+% This function addresses the possibility of the light-sensing diodes
+% stuttering causing multiple onset events.
+%
+% INPUT VARIABLE
+%   diodes : 2- or 3-dimension vector of on-off diode information
+%            [samples x diode# x epochs]
+%
+% OUTPUT VARIABLES
+%   diodes : cleaned up diode information vector
+%    tagIt : no idea what this is
+%
+% Created 2016-08-04 Scott Bressler
 
 nEpochs = size(diodes,3);
 nTriggers = size(diodes,2);
