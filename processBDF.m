@@ -61,6 +61,7 @@ function ERP = processBDF(bdfFilename,trg,tEpo,cf)
 %   2015-04-01: adjusted epoching scheme SCB
 %   2016-04-25: generalized version to apply broadly to many EEG
 %               applications (for WRNMMC)
+%   2016-08-04: figuring out GitHub shit "ShitHub"
 
 if nargin==3
     cf = [1 30];    
