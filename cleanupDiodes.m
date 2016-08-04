@@ -5,7 +5,8 @@ function [diodes,tagIt] = cleanupDiodes(diodes)
 % stuttering causing multiple onset events.
 %
 % INPUT VARIABLE
-%   diodes : 
+%   diodes : 2- or 3-dimension vector of on-off diode information
+%            [samples x diode# x epochs]
 %
 % OUTPUT VARIABLES
 %   diodes :
