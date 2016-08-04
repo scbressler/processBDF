@@ -16,7 +16,6 @@ function [diodes,tagIt] = cleanupDiodes(diodes)
 %    tagIt : no idea what this is...yet
 %
 % Created: 2016-08-04 Scott Bressler
-% new saved information
 
 nEpochs = size(diodes,3);
 nTriggers = size(diodes,2);
