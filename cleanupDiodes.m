@@ -9,8 +9,8 @@ function [diodes,tagIt] = cleanupDiodes(diodes)
 %            [samples x diode# x epochs]
 %
 % OUTPUT VARIABLES
-%   diodes :
-%    tagIt :
+%   diodes : cleaned up diode information vector
+%    tagIt : no idea what this is
 %
 % Created 2016-08-04 Scott Bressler
 
